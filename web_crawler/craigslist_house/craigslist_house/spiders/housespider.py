@@ -15,12 +15,15 @@ class HouseSpiders(Spider):
 
     def parse(self, response):
         items=[]
-        hxs=Selector(response)
-        contexts = hxs.xpath("//div[@class='content']/p[@class='row']")
-        for context in contexts:
-            item=CraigslistHouseItem()
-            item["title"]=context.xpath("//p/span/span[@class='pl']/a/text()").extract()
-            item["url"]=context.xpath("//p/span/span[@class='pl']/a/@href").extract()
-            item["price"]=context.xpath("//p/span/span[@class='l2']/span[@class='price']/text()").extract()
+        hxs = Selector(response)
+        #titles = hxs.xpath("//span[@class='pl']")
+        #prices = hxs.xpath("//span[@class='l2']")
+        contents=hxs.xpath("//span[@class='txt']")
+        items = []
+        for content in contents:
+            item = CraigslistHouseItem()
+            item ["title"] = content.select("span[2]/a/text()").extract()
+            item ["url"] = httpHead+content.select("span[2]/a/@href").extract()[0]
+            item ["price"]=content.select("span[3]/span[1]/text()").extract()
             items.append(item)
-        return(items)
+        return items
