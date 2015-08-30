@@ -16,16 +16,11 @@ class HouseSpiders(Spider):
     def parse(self, response):
         items=[]
         hxs=Selector(response)
-        contents = hxs.xpath("//div[@class='content']/*")
-        titles=context.xpath("//p/span/span/a/text()").extract()
-        urls=context.xpath("//p/span/span[@class='pl']/a/@href").extract()
-        prices=context.xpath("//p/span/span[@class='l2']/span[@class='price']/text()").extract()
-        print "hehe"
-        print (titles,urls,prices)
-#        for context in contents:
-#            item=CraigslistHouseItem()
-#            item["title"]=context.xpath("//p/span/span/a/text()").extract()
-#            item["url"]=httpHead+context.xpath("//p/span/span[@class='pl']/a/@href").extract()[0]
-#            item["price"]=context.xpath("//p/span/span[@class='l2']/span[@class='price']/text()").extract()
-#            items.append(item)
+        contexts = hxs.xpath("//div[@class='content']/p[@class='row']")
+        for context in contexts:
+            item=CraigslistHouseItem()
+            item["title"]=context.xpath("//p/span/span[@class='pl']/a/text()").extract()
+            item["url"]=context.xpath("//p/span/span[@class='pl']/a/@href").extract()
+            item["price"]=context.xpath("//p/span/span[@class='l2']/span[@class='price']/text()").extract()
+            items.append(item)
         return(items)
