@@ -3,13 +3,14 @@ from scrapy.loader import XPathItemLoader
 from scrapy.selector import HtmlXPathSelector
 from scrapy.selector import Selector
 from craigslist_house.items import CraigslistHouseItem
+from scrapy.linkextractors import LinkExtractor
 
 httpHead="https://losangeles.craigslist.org"
-class HouseSpiders(Spider):
+class HouseSpiders(CrawlSpider):
     name = "crawl_house"
     allowed_domains = ["craigslist.org"]
     start_urls = ["https://losangeles.craigslist.org/search/apa?sort=date"]
-    rules=(Rule (SgmlLinkExtractor(restrict_xpaths=('//a[@class="button next"]',)), callback="parse_items", follow= True), )
+    rules = (Rule(LinkExtractor(restrict_xpaths=('//a[@class="button next"]',)),callback='parse_items', follow= True),)
 
     def parse_items(self, response):
         items=[]
