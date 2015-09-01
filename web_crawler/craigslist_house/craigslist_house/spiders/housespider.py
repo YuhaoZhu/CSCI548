@@ -9,11 +9,9 @@ class HouseSpiders(Spider):
     name = "crawl_house"
     allowed_domains = ["craigslist.org"]
     start_urls = ["https://losangeles.craigslist.org/search/apa?sort=date"]
-   # httpHead="https://losangeles.craigslist.org/"
-   # rules=(Rule (SgmlLinkExtractor(allow=("index\d00\.html", ),restrict_xpaths=('//a[@class="button next"]',))
-   # , callback="parse_items", follow= True), )
+    rules=(Rule (SgmlLinkExtractor(restrict_xpaths=('//a[@class="button next"]',)), callback="parse_items", follow= True), )
 
-    def parse(self, response):
+    def parse_items(self, response):
         items=[]
         hxs = Selector(response)
         #titles = hxs.xpath("//span[@class='pl']")
