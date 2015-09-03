@@ -63,7 +63,9 @@ DOWNLOAD_DELAY=2
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
+    'craigslist_house.pipelines.PriceValidationPipeline': 100,
     'craigslist_house.pipelines.DuplicatesPipeline': 200,
+    'craigslist_house.pipelines.HtmlWriterPipeline':300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
