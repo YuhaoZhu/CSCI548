@@ -6,19 +6,18 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 from scrapy.exceptions import DropItem
 import json
+import urllib
 
+localPath="results/"
 class CraigslistHousePipeline(object):
     def process_item(self, item, spider):
         return item
 
 class HtmlWriterPipeline(object):
-
-    def __init__(self):
-        self.file = open('results/items.jl', 'wb')
-
+    
     def process_item(self, item, spider):
-        line = json.dumps(dict(item)) + "\n"
-        self.file.write(line)
+        fileName=item['url'].split("/")[-1]
+        urllib.urlretrieve (item['url'],localPath+fileName)
         return item
 
 class PriceValidationPipeline(object):
