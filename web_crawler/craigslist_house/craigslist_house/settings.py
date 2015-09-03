@@ -62,9 +62,9 @@ DOWNLOAD_DELAY=2
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'craigslist_house.pipelines.SomePipeline': 10,
-#}
+ITEM_PIPELINES = {
+    'craigslist_house.pipelines.DuplicatesPipeline': 200,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
