@@ -7,4 +7,6 @@
 2. Language: Python
 3. Goal: At least 1000 pages
 4. Usage: scrapy crawl crawl_house
-
+5. Basic Introduction:
+  1. Implemented a spider with XPath features
+  2. Implemented 3 pipelines
