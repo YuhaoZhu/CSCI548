@@ -4,7 +4,7 @@ from nltk.tokenize import word_tokenize
 import sys,string,nltk
 
 #Define the output format
-#word prefix surfix pos wshape hasCap label
+#word prefix surfix pos len wshape hasCap label
 class Generator:
     
     def wshape(self,word):
@@ -37,9 +37,10 @@ class Generator:
             tags=nltk.pos_tag(words)
             for tag in tags:
                 word=tag[0]
-                print word,word[0],word[-1],tag[1],self.wshape(word),self.hasCap(word)
+                print word,word[0],word[-1],tag[1],len(word),self.wshape(word),self.hasCap(word)
+            print
         except:
-            self.error+=1    
+            self.error=1    
 def main():
     reload(sys)
     sys.setdefaultencoding("utf-8")
