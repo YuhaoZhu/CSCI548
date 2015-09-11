@@ -37,7 +37,7 @@ class Generator:
             tags=nltk.pos_tag(words)
             for tag in tags:
                 word=tag[0]
-                print word,word[0],word[-1],tag[1],len(word),self.wshape(word),self.hasCap(word)
+                print word,word[0],word[-1],tag[1],len(word),self.wshape(word),self.hasCap(word),'I'
             print
         except:
             self.error=1    
