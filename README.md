@@ -26,3 +26,6 @@
 1. extract.py: Extract the plain text from Html with BS
 2. generator.py: Generate feature: word prefix surfix pos len wshape hasCap label from Plain txt and the default label if 'I', irrelevant
 3. chunking.py: This code was based on turtorial on the CRFsuite website. Please refer the website for more. http://www.chokkan.org/software/crfsuite/tutorial.html
+4. compFValue.py: This code works to compute the F-value of the result
+5. trainer.py: CRF classifier based on CRFSuite
+6. tagger.py: Tagger based on #5 model
