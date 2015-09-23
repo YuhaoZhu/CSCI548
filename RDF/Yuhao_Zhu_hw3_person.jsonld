@@ -1,0 +1,25 @@
+{
+  "@context": "http://schema.org",
+  "@type": "person",
+  "name": "Jane Doe",
+  "jobTitle": "Professor",
+  "telephone": "(123)456-789",
+  "url": "http://www.janedoe.com",
+  "employer": {
+    "@type": "Organization",
+    "name": "XYZ",
+    "url": "http://www.xyz.com",
+    "logo": "http://www.xyz.com/logo.gif",
+    "location": {
+      "@type": "Place",
+      "name": "The Empire State Building",
+      "description": "The Empire State Building is a 102-story landmark in NY City.",
+      "image": "http://www.civil.usherbrooke.ca/cours/gci215a/empire-state-building.jpg",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "40.75",
+        "longitude": "73.98"
+      }
+    }
+  }
+}

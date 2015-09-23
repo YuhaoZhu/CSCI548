@@ -1,0 +1,54 @@
+{
+  "@context": "http://schema.org",
+  "@type": "Restaurant",
+  "name": "Raffi’s Place",
+  "address":{
+    "@type": "PostalAddress",
+    "addressLocality": "Glendale",
+    "addressRegion": "CA",
+    "postalCode": "91205",
+    "streetAddress": "211 E Broadway"
+  },
+  "telephone": "(818)240-7411",
+  "website": {
+    "@type": "WebSite",
+    "url": "http://www.raffisplace.com/"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "reviewCount": "1890"
+  },
+  "servesCuisine": [
+    "Middle Eastern",
+    "Persian/Iranian",
+    "Armenian"
+  ],
+  "openingHours": [
+    "Mo-Sa 11:30-22:00",
+    "Su 11:30-21:00"
+  ],
+  "reviews": [
+    {
+      "@type": "Review",
+      "author": "John Doe",
+      "datePublished": "2015-08-28",
+      "reviewBody": "So far one of the best Persian restaurants I've been to in LA. ...",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "datePublished": "2015-08-22",
+      "reviewBody": "Been here twice and here's what I think: Best Persian food I've ever had!. ...,",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      }
+    }
+  ]
+
+
+}

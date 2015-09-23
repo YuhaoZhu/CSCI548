@@ -1,0 +1,20 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ [ a schema:person;
+    schema:employer [ a schema:Organization;
+      schema:location [ a schema:Place;
+        schema:description "The Empire State Building is a 102-story landmark in NY City.";
+        schema:geo [ a schema:GeoCoordinates;
+          schema:latitude "40.75";
+          schema:longitude "73.98"];
+        schema:image <http://www.civil.usherbrooke.ca/cours/gci215a/empire-state-building.jpg>;
+        schema:name "The Empire State Building"];
+      schema:logo <http://www.xyz.com/logo.gif>;
+      schema:name "XYZ";
+      schema:url <http://www.xyz.com>];
+    schema:jobTitle "Professor";
+    schema:name "Jane Doe";
+    schema:telephone "(123)456-789";
+    schema:url <http://www.janedoe.com>] .

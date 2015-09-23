@@ -1,0 +1,48 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ [
+    a schema:Restaurant;
+    schema:address [
+      a schema:PostalAddress;
+      schema:addressLocality "Glendale";
+      schema:addressRegion "CA";
+      schema:postalCode "91205";
+      schema:streetAddress "211 E Broadway"
+    ];
+    schema:aggregateRating [
+      a schema:AggregateRating;
+      schema:ratingValue "4.5";
+      schema:reviewCount "1890"
+    ];
+    schema:name "Raffi’s Place";
+    schema:openingHours "Mo-Sa 11:30-22:00",
+      "Su 11:30-21:00";
+    schema:reviews [
+      a schema:Review;
+      schema:author "John Doe";
+      schema:datePublished "2015-08-28"^^schema:Date;
+      schema:reviewBody "So far one of the best Persian restaurants I've been to in LA. ...";
+      schema:reviewRating [
+        a schema:Rating;
+        schema:ratingValue "5"
+      ]
+    ],  [
+      a schema:Review;
+      schema:datePublished "2015-08-22"^^schema:Date;
+      schema:reviewBody "Been here twice and here's what I think: Best Persian food I've ever had!. ...,";
+      schema:reviewRating [
+        a schema:Rating;
+        schema:ratingValue "5"
+      ]
+    ];
+    schema:servesCuisine "Middle Eastern",
+      "Persian/Iranian",
+      "Armenian";
+    schema:telephone "(818)240-7411";
+    schema:website [
+      a schema:WebSite;
+      schema:url <http://www.raffisplace.com/>
+    ]
+ ] .
