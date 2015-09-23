@@ -29,3 +29,7 @@
 4. compFValue.py: This code works to compute the F-value of the result
 5. trainer.py: CRF classifier based on CRFSuite
 6. tagger.py: Tagger based on #5 model
+
+##RDF
+###Writing JSON-LD for JSON and convert them with RDF Distiller
+
