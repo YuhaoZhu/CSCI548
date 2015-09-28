@@ -1,0 +1,14 @@
+PREFIX dbpedia0: <http://dbpedia.org/ontology/>
+PREFIX dbpedia2: <http://dbpedia.org/property/>
+PREFIX dbpedia1: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?name WHERE {
+?body a dbpedia0:Building.
+?body rdfs:label ?name.
+?body dbpedia2:location dbpedia1:New_York_City.
+FILTER regex(?name,"Plaza").
+}
+ORDER BY ?name

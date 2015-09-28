@@ -1,0 +1,18 @@
+PREFIX dbpedia0: <http://dbpedia.org/ontology/>
+PREFIX dbpedia2: <http://dbpedia.org/property/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?name ?eCount ?fCount ?dif WHERE {
+?body a dbpedia0:Building.
+?body rdfs:label ?name.
+OPTIONAL {?body dbpedia2:locationCountry ?location}.
+?body dbpedia2:elevatorCount ?eCount.
+?body dbpedia2:floorCount ?fCount.
+BIND (xsd:integer(?eCount)-xsd:integer(?fCount) AS ?dif).
+FILTER (?dif>=10).
+FILTER (lang(?name)="en").
+FILTER (?location !="United States"@en).
+}
+ORDER BY DESC(?dif)

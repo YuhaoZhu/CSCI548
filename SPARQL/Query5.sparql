@@ -1,0 +1,20 @@
+PREFIX dbpedia0: <http://dbpedia.org/ontology/>
+PREFIX dbpedia2: <http://dbpedia.org/property/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?name WHERE {
+?body a dbpedia0:Building.
+?body rdfs:label ?name.
+?body dbpedia2:architect ?architect.
+FILTER NOT EXISTS{
+    ?body1 a dbpedia0:Building.
+    ?body1 foaf:name ?name.
+    ?body1 dbpedia2:architect ?architect2.
+    Filter (?architect=?architect2 && ?body1 != ?body).
+    Filter (lang(?name)==“en”).
+}
+}
+ORDER BY ?name
+LIMIT 1000
