@@ -33,3 +33,9 @@
 ##RDF
 ###Writing JSON-LD for JSON and convert them with RDF Distiller
 
+
+##SPARQL
+###Write SPARQL based on DBPEDIA
+Link:http://dbpedia.org/sparql
+
+You may just test the SQL in the above link.
