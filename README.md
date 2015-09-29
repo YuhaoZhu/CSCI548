@@ -1,5 +1,10 @@
 #USC CSCI 548 HOMEWORKS FOR 2015 FALL
 
+##Data
+I've included the original data I used in this repository. You can also crawled the data from Web_crawler part. Just for your convenience.
+
+##Dependence
+Please refer to different part for their own dependence, like NLTK.
 
 ##Web_crawler
 ###This part is for HomeWork1 and based on scrapy
@@ -39,3 +44,7 @@
 Link:http://dbpedia.org/sparql
 
 You may just test the SQL in the above link.
+
+##Wrapper
+###Built a wrapper based with BeautifulSoup, which is similiar with CRF
+The wrapper was modified based on my work with CRF
